@@ -1,0 +1,494 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HR Contacts</title>
+<style>
+body{font-family:Arial;margin:0;background:#f2f2f2}header{background:#0b4a8b;color:#fff;padding:14px;position:sticky;top:0}
+.tabs{display:flex}.tabs button{flex:1;padding:12px;border:none;background:#d9e8f7}.tabs button.active{background:#0b4a8b;color:#fff}
+#search,#unit{width:96%;margin:8px 2%;padding:10px;border-radius:20px;border:1px solid #ccc}
+.item{display:flex;align-items:center;background:#fff;padding:12px;border-bottom:1px solid #ddd}
+.avatar{width:42px;height:42px;border-radius:50%;background:#0b4a8b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;margin-right:12px}
+.details{flex:1}.name{font-weight:bold}.sub{font-size:13px;color:#666}
+.actions a{text-decoration:none;font-size:22px;margin-left:10px}
+</style></head><body>
+<header><h2 style="margin:0">📞 Contact Directory</h2></header>
+<div class="tabs">
+<button id="b1" class="active" onclick="showType('hr')">HR Team</button>
+<button id="b2" onclick="showType('contractor')">Contractors</button>
+</div>
+<input id="search" placeholder="Search..." onkeyup="filterList()">
+<select id="unit" onchange="filterList()">
+<option value="">All Units</option><option>1</option><option>2</option><option>3</option><option>4</option>
+</select>
+<div id="list">
+
+<div class="item hr" data-unit="1">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">ASHISH ASHAPURE</div>
+<div class="sub">ASSISTANT MANAGER | Unit 1 | FIXED</div>
+<div class="sub">9827272007</div>
+</div>
+<div class="actions"><a href="tel:9827272007">📞</a><a href="https://wa.me/919827272007">💬</a></div>
+</div>
+<div class="item hr" data-unit="1">
+<div class="avatar">S</div>
+<div class="details">
+<div class="name">SUDHIR YADAV</div>
+<div class="sub">ASSISTANT MANAGER | Unit 1 | FIXED</div>
+<div class="sub">8871141416</div>
+</div>
+<div class="actions"><a href="tel:8871141416">📞</a><a href="https://wa.me/918871141416">💬</a></div>
+</div>
+<div class="item hr" data-unit="1">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DEEPAK PATEL</div>
+<div class="sub">HR Team | Unit 1 | ROTATIONAL</div>
+<div class="sub">6263093264</div>
+</div>
+<div class="actions"><a href="tel:6263093264">📞</a><a href="https://wa.me/916263093264">💬</a></div>
+</div>
+<div class="item hr" data-unit="1">
+<div class="avatar">M</div>
+<div class="details">
+<div class="name">MANOJ VYAS</div>
+<div class="sub">HR Team | Unit 1 | ROTATIONAL</div>
+<div class="sub">9406608034</div>
+</div>
+<div class="actions"><a href="tel:9406608034">📞</a><a href="https://wa.me/919406608034">💬</a></div>
+</div>
+<div class="item hr" data-unit="1">
+<div class="avatar">S</div>
+<div class="details">
+<div class="name">SAGAR RATHORE</div>
+<div class="sub">HR Team | Unit 1 | ROTATIONAL</div>
+<div class="sub">7000404252</div>
+</div>
+<div class="actions"><a href="tel:7000404252">📞</a><a href="https://wa.me/917000404252">💬</a></div>
+</div>
+<div class="item hr" data-unit="2">
+<div class="avatar">N</div>
+<div class="details">
+<div class="name">NIHAR RANJAN JHA</div>
+<div class="sub">DEPUTY MANAGER | Unit 2 | FIXED</div>
+<div class="sub">8527113740</div>
+</div>
+<div class="actions"><a href="tel:8527113740">📞</a><a href="https://wa.me/918527113740">💬</a></div>
+</div>
+<div class="item hr" data-unit="2">
+<div class="avatar">R</div>
+<div class="details">
+<div class="name">RAJESHWAR AGRAWAL</div>
+<div class="sub">ASSISTANT MANAGER | Unit 2 | FIXED</div>
+<div class="sub">9893665548</div>
+</div>
+<div class="actions"><a href="tel:9893665548">📞</a><a href="https://wa.me/919893665548">💬</a></div>
+</div>
+<div class="item hr" data-unit="2">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">ANIL KUMAR VERMA</div>
+<div class="sub">HR Team | Unit 2 | FIXED</div>
+<div class="sub">7000635781</div>
+</div>
+<div class="actions"><a href="tel:7000635781">📞</a><a href="https://wa.me/917000635781">💬</a></div>
+</div>
+<div class="item hr" data-unit="2">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">ANOKHI CHOUHAN</div>
+<div class="sub">HR Team | Unit 2 | ROTATIONAL</div>
+<div class="sub">9644858950</div>
+</div>
+<div class="actions"><a href="tel:9644858950">📞</a><a href="https://wa.me/919644858950">💬</a></div>
+</div>
+<div class="item hr" data-unit="2">
+<div class="avatar">B</div>
+<div class="details">
+<div class="name">BHAVESH DUBEY</div>
+<div class="sub">HR Team | Unit 2 | FIXED</div>
+<div class="sub">8223080078</div>
+</div>
+<div class="actions"><a href="tel:8223080078">📞</a><a href="https://wa.me/918223080078">💬</a></div>
+</div>
+<div class="item hr" data-unit="2">
+<div class="avatar">B</div>
+<div class="details">
+<div class="name">BRIJRAJ</div>
+<div class="sub">HR Team | Unit 2 | FIXED</div>
+<div class="sub">8085761488</div>
+</div>
+<div class="actions"><a href="tel:8085761488">📞</a><a href="https://wa.me/918085761488">💬</a></div>
+</div>
+<div class="item hr" data-unit="3">
+<div class="avatar">M</div>
+<div class="details">
+<div class="name">MANISH CHOUHAN</div>
+<div class="sub">JUNIOR MANAGER | Unit 3 | FIXED</div>
+<div class="sub">9827272241</div>
+</div>
+<div class="actions"><a href="tel:9827272241">📞</a><a href="https://wa.me/919827272241">💬</a></div>
+</div>
+<div class="item hr" data-unit="3">
+<div class="avatar">S</div>
+<div class="details">
+<div class="name">SHANI KUMAR SONDIYA</div>
+<div class="sub">HR Team | Unit 3 | FIXED</div>
+<div class="sub">7999562415</div>
+</div>
+<div class="actions"><a href="tel:7999562415">📞</a><a href="https://wa.me/917999562415">💬</a></div>
+</div>
+<div class="item hr" data-unit="3">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DHARAM</div>
+<div class="sub">HR Team | Unit 3 | ROTATIONAL</div>
+<div class="sub">9630459270</div>
+</div>
+<div class="actions"><a href="tel:9630459270">📞</a><a href="https://wa.me/919630459270">💬</a></div>
+</div>
+<div class="item hr" data-unit="3">
+<div class="avatar">N</div>
+<div class="details">
+<div class="name">NARENDRA YADAV</div>
+<div class="sub">HR Team | Unit 3 | ROTATIONAL</div>
+<div class="sub">8839175787</div>
+</div>
+<div class="actions"><a href="tel:8839175787">📞</a><a href="https://wa.me/918839175787">💬</a></div>
+</div>
+<div class="item hr" data-unit="3">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">ANKIT CHOUDHARY</div>
+<div class="sub">HR Team | Unit 3 | ROTATIONAL</div>
+<div class="sub">9589741273</div>
+</div>
+<div class="actions"><a href="tel:9589741273">📞</a><a href="https://wa.me/919589741273">💬</a></div>
+</div>
+<div class="item hr" data-unit="4">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DEEPAK MALVIYA</div>
+<div class="sub">HR Team | Unit 4 | ROTATIONAL</div>
+<div class="sub">8982830835</div>
+</div>
+<div class="actions"><a href="tel:8982830835">📞</a><a href="https://wa.me/918982830835">💬</a></div>
+</div>
+<div class="item hr" data-unit="4">
+<div class="avatar">R</div>
+<div class="details">
+<div class="name">ROHIT THAKUR</div>
+<div class="sub">HR Team | Unit 4 | ROTATIONAL</div>
+<div class="sub">8085591360</div>
+</div>
+<div class="actions"><a href="tel:8085591360">📞</a><a href="https://wa.me/918085591360">💬</a></div>
+</div>
+<div class="item hr" data-unit="4">
+<div class="avatar">M</div>
+<div class="details">
+<div class="name">MANOJ MALVIYA</div>
+<div class="sub">HR Team | Unit 4 | FIXED</div>
+<div class="sub">9171035265</div>
+</div>
+<div class="actions"><a href="tel:9171035265">📞</a><a href="https://wa.me/919171035265">💬</a></div>
+</div>
+<div class="item hr" data-unit="4">
+<div class="avatar">S</div>
+<div class="details">
+<div class="name">SHUBHAM CHOUHAN</div>
+<div class="sub">HR Team | Unit 4 | ROTATIONAL</div>
+<div class="sub">9302448910</div>
+</div>
+<div class="actions"><a href="tel:9302448910">📞</a><a href="https://wa.me/919302448910">💬</a></div>
+</div>
+
+<div class="item contractor" data-unit="1" style="display:none">
+<div class="avatar">S</div>
+<div class="details">
+<div class="name">SANDEEP PATEL</div>
+<div class="sub">YASH ENTERPRISES | Unit 1</div>
+<div class="sub">9993313137</div>
+</div>
+<div class="actions"><a href="tel:9993313137">📞</a><a href="https://wa.me/919993313137">💬</a></div>
+</div>
+<div class="item contractor" data-unit="1" style="display:none">
+<div class="avatar">P</div>
+<div class="details">
+<div class="name">PANKAJ PANWAR</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. | Unit 1</div>
+<div class="sub">9691950493</div>
+</div>
+<div class="actions"><a href="tel:9691950493">📞</a><a href="https://wa.me/919691950493">💬</a></div>
+</div>
+<div class="item contractor" data-unit="1" style="display:none">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">ARJUN SINGH</div>
+<div class="sub">D. D. ENTERPRISES | Unit 1</div>
+<div class="sub">8085722713</div>
+</div>
+<div class="actions"><a href="tel:8085722713">📞</a><a href="https://wa.me/918085722713">💬</a></div>
+</div>
+<div class="item contractor" data-unit="1" style="display:none">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">ANAND THAKUR</div>
+<div class="sub">M KASIF CONTRACTOR | Unit 1</div>
+<div class="sub">8878874148</div>
+</div>
+<div class="actions"><a href="tel:8878874148">📞</a><a href="https://wa.me/918878874148">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DHEERAJ SOLANKI</div>
+<div class="sub">D. D. ENTERPRISES | Unit 2</div>
+<div class="sub">8827048983</div>
+</div>
+<div class="actions"><a href="tel:8827048983">📞</a><a href="https://wa.me/918827048983">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">M</div>
+<div class="details">
+<div class="name">MAHENDRA</div>
+<div class="sub">D. D. ENTERPRISES | Unit 2</div>
+<div class="sub">8827109257</div>
+</div>
+<div class="actions"><a href="tel:8827109257">📞</a><a href="https://wa.me/918827109257">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">T</div>
+<div class="details">
+<div class="name">TOFIQUE SHAIKH</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. | Unit 2</div>
+<div class="sub">9753247086</div>
+</div>
+<div class="actions"><a href="tel:9753247086">📞</a><a href="https://wa.me/919753247086">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">V</div>
+<div class="details">
+<div class="name">VINOD KUMAR</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. | Unit 2</div>
+<div class="sub">7024285001</div>
+</div>
+<div class="actions"><a href="tel:7024285001">📞</a><a href="https://wa.me/917024285001">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">AAKASH RAJORIYA</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. | Unit 2</div>
+<div class="sub">8109695862</div>
+</div>
+<div class="actions"><a href="tel:8109695862">📞</a><a href="https://wa.me/918109695862">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DEVENDRA RATHORE</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. GXO | Unit 2</div>
+<div class="sub">7697954037</div>
+</div>
+<div class="actions"><a href="tel:7697954037">📞</a><a href="https://wa.me/917697954037">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">B</div>
+<div class="details">
+<div class="name">BHARAT PARIHAR</div>
+<div class="sub">M KASIF CONTRACTOR | Unit 2</div>
+<div class="sub">7999345176</div>
+</div>
+<div class="actions"><a href="tel:7999345176">📞</a><a href="https://wa.me/917999345176">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">R</div>
+<div class="details">
+<div class="name">RAJESH PRAJAPATI</div>
+<div class="sub">OM ENTERPRISES | Unit 2</div>
+<div class="sub">9144300678</div>
+</div>
+<div class="actions"><a href="tel:9144300678">📞</a><a href="https://wa.me/919144300678">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">R</div>
+<div class="details">
+<div class="name">RAJAT</div>
+<div class="sub">R CUBE | Unit 2</div>
+<div class="sub">8319742201</div>
+</div>
+<div class="actions"><a href="tel:8319742201">📞</a><a href="https://wa.me/918319742201">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">C</div>
+<div class="details">
+<div class="name">CHETAN DEVATWAL</div>
+<div class="sub">SHIVANSH SECURITY SERVICES | Unit 2</div>
+<div class="sub">7828687500</div>
+</div>
+<div class="actions"><a href="tel:7828687500">📞</a><a href="https://wa.me/917828687500">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">R</div>
+<div class="details">
+<div class="name">RAJKUMAR</div>
+<div class="sub">YASH ENTERPRISES | Unit 2</div>
+<div class="sub">8305374848</div>
+</div>
+<div class="actions"><a href="tel:8305374848">📞</a><a href="https://wa.me/918305374848">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">A</div>
+<div class="details">
+<div class="name">ANKIT</div>
+<div class="sub">YASH ENTERPRISES | Unit 2</div>
+<div class="sub">8516014416</div>
+</div>
+<div class="actions"><a href="tel:8516014416">📞</a><a href="https://wa.me/918516014416">💬</a></div>
+</div>
+<div class="item contractor" data-unit="2" style="display:none">
+<div class="avatar">G</div>
+<div class="details">
+<div class="name">GOVIND</div>
+<div class="sub">SANJEERA | Unit 2</div>
+<div class="sub">7987960172</div>
+</div>
+<div class="actions"><a href="tel:7987960172">📞</a><a href="https://wa.me/917987960172">💬</a></div>
+</div>
+<div class="item contractor" data-unit="4" style="display:none">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DEEPAK</div>
+<div class="sub">EMINENT | Unit 4</div>
+<div class="sub">9770054698</div>
+</div>
+<div class="actions"><a href="tel:9770054698">📞</a><a href="https://wa.me/919770054698">💬</a></div>
+</div>
+<div class="item contractor" data-unit="4" style="display:none">
+<div class="avatar">T</div>
+<div class="details">
+<div class="name">TARUN</div>
+<div class="sub">EMINENT | Unit 4</div>
+<div class="sub">9340327065</div>
+</div>
+<div class="actions"><a href="tel:9340327065">📞</a><a href="https://wa.me/919340327065">💬</a></div>
+</div>
+<div class="item contractor" data-unit="4" style="display:none">
+<div class="avatar">V</div>
+<div class="details">
+<div class="name">VINOD</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. | Unit 4</div>
+<div class="sub">7024285001</div>
+</div>
+<div class="actions"><a href="tel:7024285001">📞</a><a href="https://wa.me/917024285001">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">M</div>
+<div class="details">
+<div class="name">MAHENDRA MALVIYA</div>
+<div class="sub">D. D. ENTERPRISES | Unit 3</div>
+<div class="sub">8827109257</div>
+</div>
+<div class="actions"><a href="tel:8827109257">📞</a><a href="https://wa.me/918827109257">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DHEERAJ SOLANKI</div>
+<div class="sub">D. D. ENTERPRISES | Unit 3</div>
+<div class="sub">8827048983</div>
+</div>
+<div class="actions"><a href="tel:8827048983">📞</a><a href="https://wa.me/918827048983">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">V</div>
+<div class="details">
+<div class="name">VINOD</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. | Unit 3</div>
+<div class="sub">7024285001</div>
+</div>
+<div class="actions"><a href="tel:7024285001">📞</a><a href="https://wa.me/917024285001">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">J</div>
+<div class="details">
+<div class="name">JITENDRA</div>
+<div class="sub">IPS CONTRACTUAL PVT. LTD. | Unit 3</div>
+<div class="sub">6263704970</div>
+</div>
+<div class="actions"><a href="tel:6263704970">📞</a><a href="https://wa.me/916263704970">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">N</div>
+<div class="details">
+<div class="name">NAGESHWAR MALVIYA</div>
+<div class="sub">M KASIF CONTRACTOR | Unit 3</div>
+<div class="sub">7828410869</div>
+</div>
+<div class="actions"><a href="tel:7828410869">📞</a><a href="https://wa.me/917828410869">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">D</div>
+<div class="details">
+<div class="name">DUSHYANT RAJPUT</div>
+<div class="sub">M KASIF CONTRACTOR | Unit 3</div>
+<div class="sub">7999534177</div>
+</div>
+<div class="actions"><a href="tel:7999534177">📞</a><a href="https://wa.me/917999534177">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">P</div>
+<div class="details">
+<div class="name">PINKU GURJAR</div>
+<div class="sub">OM ENTERPRISES | Unit 3</div>
+<div class="sub">8349796782</div>
+</div>
+<div class="actions"><a href="tel:8349796782">📞</a><a href="https://wa.me/918349796782">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">R</div>
+<div class="details">
+<div class="name">RAJAT GURJAR</div>
+<div class="sub">R CUBE ENTERPRISES | Unit 3</div>
+<div class="sub">8319742201</div>
+</div>
+<div class="actions"><a href="tel:8319742201">📞</a><a href="https://wa.me/918319742201">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">G</div>
+<div class="details">
+<div class="name">GOVIND THAKUR</div>
+<div class="sub">SANJEERA SERVICES PVT. LTD. | Unit 3</div>
+<div class="sub">7987960172</div>
+</div>
+<div class="actions"><a href="tel:7987960172">📞</a><a href="https://wa.me/917987960172">💬</a></div>
+</div>
+<div class="item contractor" data-unit="3" style="display:none">
+<div class="avatar">C</div>
+<div class="details">
+<div class="name">CHETAN RAWAT</div>
+<div class="sub">YASH ENTERPRISES | Unit 3</div>
+<div class="sub">8109976201</div>
+</div>
+<div class="actions"><a href="tel:8109976201">📞</a><a href="https://wa.me/918109976201">💬</a></div>
+</div>
+</div>
+<script>
+let current='hr';
+function showType(t){
+current=t;
+document.getElementById('b1').classList.toggle('active',t==='hr');
+document.getElementById('b2').classList.toggle('active',t==='contractor');
+filterList();
+}
+function filterList(){
+let s=document.getElementById('search').value.toLowerCase();
+let u=document.getElementById('unit').value;
+document.querySelectorAll('.item').forEach(i=>{
+let ok=i.classList.contains(current);
+let txt=i.innerText.toLowerCase();
+if(ok && (!u || i.dataset.unit===u) && txt.includes(s)) i.style.display='flex';
+else i.style.display='none';
+});
+}
+</script>
+</body></html>
